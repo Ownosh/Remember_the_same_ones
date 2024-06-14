@@ -42,9 +42,18 @@ class MainMenu:
         print("Начать игру")
 
     def show_rules(self):
-        print("Показать правила")
+        self.root.title("Правила")
+        self.canvas.delete('all')
+        img3 = PhotoImage(file="img_rules_menu/rules.png")
+        self.canvas.create_image(0, 0, anchor=NW, image=img3)
+        back_button = Button(self.canvas, text="Назад", font=("Times New Roman", 20), bg='#3D9CEB', fg='white',
+                             command=self.main_menu)
+        self.canvas.create_window(800, 10, anchor=NW, window=back_button)
+        self.canvas.pack()
+        self.root.mainloop()
 
-    def exit_game(self):
+
+def exit_game(self):
         self.root.destroy()
 
 # Запуск приложения
